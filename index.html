@@ -8,7 +8,19 @@
 </head>
 <body>
     
+    <script type="text/javascript">
 
-    <script type="text/javascript" src="index.js"></script>
+        function loadScript(src, callback) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.onload = () => callback(script);
+            document.body.append(script);
+        }
+        loadScript('index.js', function(script) {
+            console.log("Finished !! ", script);
+        });
+        
+    </script>
+    <!-- <script type="text/javascript" src="index.js"></script> -->
 </body>
 </html>
